@@ -1,0 +1,17 @@
+<% layout('./layouts/boilerplate') -%>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="alert alert-danger text-center" role="alert">
+                <h4 class="alert-heading"><%= err.message %></h4>
+                <hr>
+                <div class="error-msg">
+                    <p>찾을 수 없는 페이지입니다.</p>
+                    <p>요청하신 페이지가 사라졌거나, 잘못된 경로를 이용하셨어요 :)</p>
+                    <% if(process.env.NODE_ENV !=="production") { %> 
+                    <p><%= err.stack %> </p>
+                    <% } %> 
+                </div>
+                <a href="/campGrounds" class="btn btn-light mt-3">Home</a>
+            </div>
+        </div>
+    </div>
